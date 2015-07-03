@@ -46,6 +46,7 @@
     <Compile Include="Admin\Country.cs" />
     <Compile Include="BaseDAC.cs" />
     <Compile Include="Admin\Category.cs" />
+    <Compile Include="Client\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
