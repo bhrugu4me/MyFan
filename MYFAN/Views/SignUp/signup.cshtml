@@ -1,0 +1,34 @@
+﻿@model SingUpViewModel
+@{
+    ViewBag.Title = "signup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div id="page-container">
+        <div class="signup-block box-size">
+            <h2>Sign Up</h2>
+            <div class="inner box-size btn">
+                @using (Html.BeginForm("signup", "signup", FormMethod.Post))
+                {
+                    @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "First Name" })
+                    @Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last Name" })
+                    @Html.TextBoxFor(m => m.EmailAddress, new { @placeholder = "Email" })
+                    @Html.TextBoxFor(m => m.ConfirmEmailAddress, new { @placeholder = "Re-enter Email" })
+                    <input type="submit" class="blue-btn" value="Get Started" name="getstarted">
+                }
+            </div>
+            <div class="inner2">
+                <strong>Join MyFan with</strong>
+                <div class="social-account">
+                    <ul>
+                        <li><a href="#"><img title="Pinterest" alt="Pinterest" src="~/Content/Img/pinterest-icn-big.png"></a></li>
+                        <li><a href="#"><img title="Linkdin" alt="Linkdin" src="~/Content/Img/linkdin-icn-big.png"></a></li>
+                        <li><a href="#"><img title="Google Plus" alt="Google Plus" src="~/Content/Img/gplus-icon.png"></a></li>
+                        <li><a href="#"><img title="Facebook" alt="Facebook" src="~/Content/Img/fb-icn-big.png"></a></li>
+                        <li><a href="#"><img title="Twitter" alt="Twitter" src="~/Content/Img/twt-icn-big.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

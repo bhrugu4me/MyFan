@@ -1,0 +1,33 @@
+﻿@model BusinessTypeCommunityBrandViewModel
+@{
+    ViewBag.Title = "signupbrand";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string header = string.Empty;
+    if (Model.BusinessType == MYFAN.BusinessObjects.MyFanCommon.eBusinessTypePage.Brand)
+    {
+        header = "Create Profile";
+    }
+    if (Model.BusinessType == MYFAN.BusinessObjects.MyFanCommon.eBusinessTypePage.Community)
+    {
+        header = "Cause or Community";
+    }
+    if (Model.BusinessType == MYFAN.BusinessObjects.MyFanCommon.eBusinessTypePage.Institute)
+    {
+        header = "Company, Organization or Institution";
+    }
+}
+<div class="wrapper">
+    <div id="page-container">
+        <div class="signup-block box-size">
+            <h2>@header</h2>
+            <div class="inner box-size btn border-none">
+                @using (Html.BeginForm("signup-business-member", "signup", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+                    @Html.EditorFor(m => m)
+                }
+            </div>
+        </div>
+    </div>
+</div>

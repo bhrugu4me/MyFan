@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <title>@ViewBag.Title - MY Fan</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="main">
+        <header id="header">
+            <div class="wrapper">
+                <div class="logo"><a href="javascript:;"><img src="~/Content/Img/logo.png" alt="My Fan" title="My Fan"></a></div>
+                <nav>
+                    <ul class="top-menu">
+                        <li><a href="javascript:;">Find Professional</a></li>
+                        <li><a href="javascript:;">Find Businesses</a></li>
+                    </ul>
+                </nav>
+                <div class="hed-search">
+                    <form action="" method="get">
+                        <input name="search" type="text" placeholder="Search Any Thing">
+                        <input name="submit" type="submit" value="">
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+        @Html.Partial("_Footer")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/myfanscripts")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

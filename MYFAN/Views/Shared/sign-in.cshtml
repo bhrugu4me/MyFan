@@ -1,0 +1,42 @@
+﻿@model LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div id="page-container" class="signup-wrap">
+
+        <div class="signin-box btn">
+            @using (Html.BeginForm("sign-in", "user", FormMethod.Post))
+            {
+            <h1>SigN In</h1>
+            <span class="signin-icn"><img src="~/Content/Img/sign-in.png" alt="Sign In" title="Sign In"></span>
+            <div class="login-fieldbox">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                @Html.TextBoxFor(m => m.EmailAddress, new { @type = "text", @placeholder = "Email Address" })
+                @Html.TextBoxFor(m => m.Password, new { @type = "password", @placeholder = "Password" })
+                <p class="keepme-signed">
+                    @Html.CheckBoxFor(m => m.iskeepSignin, new { @name = "signedcheck" })
+                    Keep me signed in
+                </p>
+                <input name="login" type="submit" value="Log In" class="blue-btn">
+                <p class="link-txt"><a href="#">Forgot Password?</a></p>
+            </div>
+            <div class="donthave">
+                <p>Don’t have a MyFAN account?</p>
+                <input name="create-an-account" type="button" value="Create an account" class="blue-btn">
+                <div class="social-account">
+                    <ul>
+                        <li><a href="#"><img src="~/Content/Img/pinterest-icn-big.png" alt="Pinterest" title="Pinterest"></a></li>
+                        <li><a href="#"><img src="~/Content/Img/linkdin-icn-big.png" alt="Linkdin" title="Linkdin"></a></li>
+                        <li><a href="#"><img src="~/Content/Img/gplus-icon.png" alt="Google Plus" title="Google Plus"></a></li>
+                        <li><a href="#"><img src="~/Content/Img/fb-icn-big.png" alt="Facebook" title="Facebook"></a></li>
+                        <li><a href="#"><img src="~/Content/Img/twt-icn-big.png" alt="Twitter" title="Twitter"></a></li>
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

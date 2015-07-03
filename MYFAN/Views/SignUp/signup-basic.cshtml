@@ -1,0 +1,48 @@
+﻿@model SignUpBasicMember
+@{
+    ViewBag.Title = "signupbusiness";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div id="page-container">
+        <div class="signup-block box-size">
+
+            @using (Html.BeginForm("signup-basic", "signup", FormMethod.Post))
+            {      <h2>Create Profile</h2>
+                <div class="inner box-size btn border-none">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+                    @Html.DropDownListFor(m => m.countryId, Model.CountryList)
+                    @Html.TextBoxFor(m => m.CityState, new { @type = "text", @placeholder = "City/State" })
+                    @Html.TextBoxFor(m => m.zipcode, new { @type = "text", @placeholder = "Zip" })
+                    <div class="profile-section">
+                        <span class="label-txt">Birthday</span>
+                        <div class="coll_2">@Html.TextBoxFor(m => m.month, new { @type = "text", @placeholder = "MM" })</div>
+                        <div class="coll_1">@Html.TextBoxFor(m => m.date, new { @type = "text", @placeholder = "DD" })</div>
+                        <div class="coll_3">@Html.TextBoxFor(m => m.year, new { @type = "text", @placeholder = "YYYY" })</div>
+                    </div>
+                    <div class="profile-section">
+                        <span class="label-txt padbotm10">I am</span>
+                        <div class="coll_1">Female @Html.RadioButtonFor(m => m.gender, false)</div>
+                        <div class="coll_2">Male @Html.RadioButtonFor(m => m.gender, true)</div>
+                        <div class="coll_3"></div>
+                    </div>
+                    <div class="profile-section martop10 padbotm10">
+                        <span class="label-txt padbotm10">I am Currently</span>
+                        <div class="coll_1">Employed @Html.RadioButtonFor(m => m.currenttype, MYFAN.BusinessObjects.MyFanCommon.eBasicMemberType.Employed)</div>
+                        <div class="coll_2">Job Seeker @Html.RadioButtonFor(m => m.currenttype, MYFAN.BusinessObjects.MyFanCommon.eBasicMemberType.JobSeeker)</div>
+                        <div class="coll_3">Student @Html.RadioButtonFor(m => m.currenttype, MYFAN.BusinessObjects.MyFanCommon.eBasicMemberType.Student)</div>
+                        <div class="coll_3">Other @Html.RadioButtonFor(m => m.currenttype, MYFAN.BusinessObjects.MyFanCommon.eBasicMemberType.Other)</div>
+                    </div>
+                    <div class="terms-txt">
+                        <p>By clicking Create Profile, you agree to the</p>
+                        <p><a href="#">MyFan Pages Terms</a>.</p>
+                    </div>
+                    <input type="submit" class="blue-btn" value="Create Profile" name="createprofile">
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

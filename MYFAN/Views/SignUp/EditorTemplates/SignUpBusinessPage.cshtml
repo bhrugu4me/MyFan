@@ -1,0 +1,33 @@
+﻿@model BusinessTypeCommunityBrandViewModel
+@{
+    ViewBag.Title = "SignUpBusinessPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string companyplaceholder = string.Empty;
+    if (Model.BusinessType == MYFAN.BusinessObjects.MyFanCommon.eBusinessTypePage.Brand)
+    {
+        companyplaceholder = "Company Name";
+    }
+    if (Model.BusinessType == MYFAN.BusinessObjects.MyFanCommon.eBusinessTypePage.Community)
+    {
+        companyplaceholder = "Cause or Community";
+    }
+    if (Model.BusinessType == MYFAN.BusinessObjects.MyFanCommon.eBusinessTypePage.Institute)
+    {
+        companyplaceholder = "Company Name";
+    }
+}
+
+@Html.HiddenFor(m => m.BusinessType)
+@Html.DropDownListFor(m => m.categoryID, Model.CategoryList)
+@Html.TextBoxFor(m => m.companyname, new { @placeholder = @companyplaceholder })
+<div class="terms-txt">
+    <p>By clicking Create Profile, you agree to the</p>
+    <p><a href="#">MyFan Pages Terms</a>.</p>
+</div>
+<div class="terms-txt">
+    <p>By clicking Create Profile, you agree to the</p>
+    <p><a href="#">MyFan Pages Terms</a>.</p>
+</div>
+<input type="submit" class="blue-btn" value="Create Profile" name="createprofile">
+
+

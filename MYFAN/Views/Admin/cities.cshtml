@@ -1,0 +1,47 @@
+﻿@model ManageCityViewModel
+@{
+    ViewBag.Title = "Manage City";
+    Layout = "~/Views/Shared/_adminFilterLayout.cshtml";
+}
+@Html.Partial("_adminFilterMenu", new NevigationViewModel(eNavigationArea.City))
+@using (Html.BeginForm("cities", "admin", FormMethod.Post))
+{
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Cities</h1> <a href="/admin/create-city">Create</a>
+            </div>
+        </div>
+        <div class="page-header title">
+            <div class="row">
+                <div class="portlet">
+                    @if (Model.CityList.Count > 0)
+                    {
+                        <table class="table table-bordered table-striped table-hover tc-table table-primary footable">
+                            <thead>
+                                <tr>
+                                    <th>City Name</th>
+                                    <th>State Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.CityList)
+                                {
+                                    <tr>
+                                        <td><a href="/admin/update-city/@item.ID"> @item.Name </a></td>
+                                        <td>@item.StateName</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <span>No Record Found</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

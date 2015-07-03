@@ -1,0 +1,38 @@
+﻿@model NevigationViewModel
+@{
+
+}
+<nav class="navbar-side fixed" role="navigation">
+    <div style="position: relative; overflow: hidden; width: 100%; height: 100%;" class="slimScrollDiv">
+        <div style="max-height: 610px; overflow: hidden; width: 100%; height: 100%;" class="navbar-collapse sidebar-collapse collapse">
+            <ul id="side" class="nav navbar-nav side-nav">
+                <li>
+                    <a href="/admin/index" class="@Model.IsSelected(eNavigationArea.Category)">
+                        Manage Category
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/countries" class="@Model.IsSelected(eNavigationArea.Country)">
+                        Manage Country
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/states" class="@Model.IsSelected(eNavigationArea.State)">
+                        Manage State
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/cities" class="@Model.IsSelected(eNavigationArea.City)">
+                        Manage City
+                    </a>
+                </li>
+                @*<li>
+                    <a href="/admin/auth" class="@Model.IsSelected(eNavigationArea.AuthType)">
+                        Manage Auth
+                    </a>
+                </li>*@
+            </ul>
+        </div>
+        <div style="background: none repeat scroll 0% 0% rgb(0, 0, 0); width: 1px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 560px;" class="slimScrollBar"></div><div style="width: 1px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: none repeat scroll 0% 0% rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;" class="slimScrollRail"></div>
+    </div>
+</nav>

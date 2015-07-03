@@ -1,0 +1,58 @@
+﻿@model StateViewModel
+@{
+    ViewBag.Title = "Create State";
+    Layout = "~/Views/Shared/_adminFilterLayout.cshtml";
+}
+@Html.Partial("_adminFilterMenu", new NevigationViewModel(eNavigationArea.State))
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1><span class="sub-title">Create State</span></h1>
+        </div>
+    </div>
+    <div class="page-header title">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="portlet">
+                    @using (Html.BeginForm("create-state", "admin", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Country:</label>
+                            <div class="col-sm-3">
+                                <div class="clearfix">
+                                    @Html.DropDownListFor(m => m.CountryID, Model.CountryLIst, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">State Name:</label>
+                            <div class="col-sm-3">
+                                <div class="clearfix">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">State Abbrivation:</label>
+                            <div class="col-sm-3">
+                                <div class="clearfix">
+                                    @Html.TextBoxFor(m => m.Abbr, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <input id="btnsubmit" type="submit" class="btn btn-primary" value="save">
+                                    &nbsp;&nbsp;
+                                    <a class="btn btn-primary" href="/admin/states">cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

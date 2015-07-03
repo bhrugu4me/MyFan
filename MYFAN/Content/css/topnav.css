@@ -1,0 +1,148 @@
+.mob-nav {
+	display:none;
+}
+
+.toggleMenu {
+	display:  none;
+	background:url(../images/nav-bg.jpg) repeat-x;
+	padding: 10px 15px 10px 15px;
+	color: #fff;
+	width:100%;
+	font-size:16px;
+	line-height:30px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-weight:700;
+        text-transform: uppercase;
+	text-decoration:none;
+}
+.toggleMenu:hover {
+	color:#fff;
+}
+.toggleMenu:after {
+	content: " ";
+	display: table;
+	float:right;
+	background: url(../images/menu-btn.png) no-repeat;
+	width:40px;
+	height:30px;
+}
+.mnav {
+	list-style: none;
+    *zoom: 1;
+}
+.mnav:before, .nav:after {
+	content: " ";
+	display: table;
+}
+.mnav:after {
+	clear: both;
+}
+.mnav ul {
+	list-style: none;
+	width: 9em;
+}
+.mnav a {
+	padding: 10px 15px !important;
+	color:#000;
+	font-size:15px;
+}
+.mnav li {
+	position: relative;
+	font-weight:400;
+}
+.mnav > li {
+	float: left;
+	border-bottom: 1px solid #CCC;
+}
+.arrow {
+	background-image: url(../images/downArrow.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	float: right;
+	height: 33px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 35px;
+	z-index:99999;
+}
+.mnav ul ul li span.arrow {
+	display: none;
+}
+.mnav > li > a {
+	display: block;
+	background:#fff;
+	text-decoration:none;
+}
+.mnav li ul {
+	position: absolute;
+	left: -9999px;
+}
+.mnav > li.hover > ul {
+	left: 0;
+}
+.mnav li li.hover ul {
+	left: 100%;
+	top: 0;
+}
+.mnav li li a {
+	display: block;
+	background: #EFEFEF;
+	position: relative;
+	z-index:100;
+	border-top: 1px solid #CCC;
+	
+}
+.mnav li li li a {
+	background:#ddd;
+	z-index:200;
+	border-top: 1px solid #CCC;
+	
+}
+
+@media screen and (max-width: 980px) {
+.active {
+ display: block;
+}
+.mnav > li {
+ float: none;
+ 
+}
+.mnav > li > .parent {
+ background-position: 95% 50%;
+}
+.mnav li li .parent {
+ background-image: url(../images/downArrow.png);
+ background-repeat: no-repeat;
+ background-position: 95% 50%;
+}
+.mnav ul {
+ display: block;
+ width: 100%;
+}
+.mnav > li.hover > ul, .mnav li li.hover ul {
+ position: static;
+}
+
+}
+
+@media only screen and (max-width: 980px) {
+.mob-nav {
+display:block;
+text-align:left !important;
+position:relative;
+top:0;
+left:0;
+width:100%;
+background:#24759f;
+z-index:99999;
+}
+
+
+
+.top-menu {
+display:none !important;
+}
+}

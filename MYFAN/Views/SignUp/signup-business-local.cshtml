@@ -1,0 +1,28 @@
+﻿@model SignUpLocalBusinessViewModel
+@{
+    ViewBag.Title = "signupbusinesslocal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div id="page-container">
+        <div class="signup-block box-size">
+            @using (Html.BeginForm("signup-business-local", "signup", FormMethod.Post))
+            {
+                <h2>Create Profile</h2>
+                <div class="inner box-size btn border-none">
+                    @Html.DropDownListFor(m => m.categoryID, Model.CategoryList, new { @placeholder = "Choose a Category" })
+                    @Html.TextBoxFor(m => m.BusinessPlaces, new { @type = "text", @placeholder = "Business or Place Name" })
+                    @Html.TextBoxFor(m => m.StreetAddress, new { @type = "text", @placeholder = "Street Address" })
+                    @Html.TextBoxFor(m => m.CityState, new { @type = "text", @placeholder = "City/State" })
+                    @Html.TextBoxFor(m => m.zipcode, new { @type = "text", @placeholder = "Zip Code" })
+                    @Html.TextBoxFor(m => m.Phone, new { @type = "text", @placeholder = "Phone" })
+                    <div class="terms-txt">
+                        <p>By clicking Create Profile, you agree to the</p>
+                        <p><a href="#">MyFan Pages Terms</a>.</p>
+                    </div>
+                    <input type="submit" class="blue-btn" value="Create Profile" name="createprofile">
+                </div>
+            }
+        </div>
+    </div>
+</div>

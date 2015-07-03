@@ -1,0 +1,45 @@
+﻿@model  SignUpProfessionalMemberViewModel
+@{
+    ViewBag.Title = "signupprofessional";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div id="page-container">
+        <div class="signup-block box-size">
+            @using (Html.BeginForm("signup-professional", "signup", FormMethod.Post))
+            {
+                @Html.ValidationSummary()
+                @Html.AntiForgeryToken()
+                <h2>Create Profile</h2>
+                <div class="inner box-size btn border-none">
+                    @Html.DropDownListFor(m => m.categoryID, Model.CategoryList)
+                    @Html.TextBoxFor(m => m.BusinessPlaceName, new { @type = "text", @placeholder = "Business or Place Name" })
+                    @Html.TextBoxFor(m => m.JobTitle, new { @type = "text", @placeholder = "Job Title" })
+                    <div class="profile-section">
+                        I am self employed @Html.CheckBoxFor(m => m.isSelfEmployeed)
+                    </div>
+                    @Html.TextBoxFor(m => m.CityState, new { @type = "text", @placeholder = "City/State" })
+                    @Html.TextBoxFor(m => m.zipcode, new { @type = "text", @placeholder = "Zip Code" })
+                    @Html.TextBoxFor(m => m.Phone, new { @type = "text", @placeholder = "Phone" })
+                    <div class="profile-section">
+                        <span class="label-txt">Birthday</span>
+                        <div class="coll_2">@Html.TextBoxFor(m => m.month, new { @type = "text", @placeholder = "MM" })</div>
+                        <div class="coll_1">@Html.TextBoxFor(m => m.date, new { @type = "text", @placeholder = "DD" })</div>
+                        <div class="coll_3">@Html.TextBoxFor(m => m.year, new { @type = "text", @placeholder = "YYYY" })</div>
+                    </div>
+                    <div class="profile-section">
+                        <span class="label-txt padbotm10">I am</span>
+                        <div class="coll_1">Female @Html.RadioButtonFor(m => m.gender, true)></div>
+                        <div class="coll_2">Male @Html.RadioButtonFor(m => m.gender, false)</div>
+                        <div class="coll_3"></div>
+                    </div>
+                    <div class="terms-txt">
+                        <p>By clicking Create Profile, you agree to the</p>
+                        <p><a href="#">MyFan Pages Terms</a>.</p>
+                    </div>
+                    <input type="submit" class="blue-btn" value="Create Profile" name="createprofile">
+                </div>
+            }
+        </div>
+    </div>
+</div>

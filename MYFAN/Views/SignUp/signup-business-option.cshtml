@@ -1,0 +1,20 @@
+﻿@model SignUpBusinessTypeViewModel
+@{
+    ViewBag.Title = "signupbusinessoption";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper">
+    <div id="page-container" class="signup-wrap">
+        @using (Html.BeginForm("signup-business-option", "signup", FormMethod.Get))
+        {
+            <h1>Create a Business page</h1>
+            <ul class="signup-circlebox">
+                <li><a href=""><span class="circle">Local Business<br>or Place</span></a></li>
+                <li><a href=""><span class="circle">Company,<br>Organization or<br>Institution</span></a> </li>
+                <li><a href=""><span class="circle">Brand<br><br>Product</span></a></li>
+                <li><a href=""><span class="circle">Cause<br>or<br>Community</span></a></li>
+            </ul>
+        }
+    </div>
+</div>

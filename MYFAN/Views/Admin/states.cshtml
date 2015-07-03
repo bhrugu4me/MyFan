@@ -1,0 +1,48 @@
+﻿@model ManageStateViewModel
+@{
+    ViewBag.Title = "Manage State";
+    Layout = "~/Views/Shared/_adminFilterLayout.cshtml";
+}
+@Html.Partial("_adminFilterMenu", new NevigationViewModel(eNavigationArea.State))
+@using (Html.BeginForm("manage-state", "admin", FormMethod.Post))
+{
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Manage State</h1> <a href="/admin/create-state">Create</a>
+            </div>
+        </div>
+        <div class="page-header title">
+            <div class="row">
+                <div class="portlet">
+                    @if (Model.StateList.Count > 0)
+                    {
+                        <table class="table table-bordered table-striped table-hover tc-table table-primary footable">
+                            <thead>
+                                <tr>
+                                    <th>State Name</th>
+                                    <th>State Abbr.</th>
+                                    <th>Country Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.StateList)
+                                {
+                                    <tr>
+                                        <td><a href="/admin/update-state/@item.ID">@item.Name</a></td>
+                                        <td>@item.Abbr</td>
+                                        <td>@item.ContryName</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <span>No Record Found</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}

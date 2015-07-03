@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/myadmincss")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class=" pace-running">
+
+    <div class="pace pace-active">
+        <div data-progress="96" data-progress-text="96%" style="width: 96.9406%;" class="pace-progress">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <div id="wrapper">
+        <div id="main-container">
+            <nav class="navbar-top fixed" role="navigation">
+                <div class="navbar-header">
+                    <div class="navbar-brand">
+                        <div class="admin-logo">
+                            <img src="~/Content/Img/footer-logo.png" alt="My Fan" title="My Fan">
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="collapse navbar-collapse top-collapse">
+           
+        </div>
+        @RenderBody()
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/myfanadmin")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

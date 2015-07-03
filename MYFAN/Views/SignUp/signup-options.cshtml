@@ -1,0 +1,41 @@
+﻿@model SignUpMemberTypeViewModel
+@{
+    ViewBag.Title = "signupoption";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div id="page-container" class="signup-wrap">
+        <h1>Create a MyFan page</h1>
+        <div class="create-myfanpage">
+            @using (Html.BeginForm("signup-options", "signup", FormMethod.Post))
+            {
+                <ul>
+                    <li>
+                        <a id="@MYFAN.BusinessObjects.MyFanCommon.eMemberType.Normal" href="@MYFAN.BusinessObjects.MyFanCommon.eMemberType.Normal">
+                            <img src="images/new-member.png" alt="new-member" title="new-member">
+                            <h2>New</h2>
+                            <h3>Member</h3>
+                            <p>Share your passions to create and connect with fans</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="@MYFAN.BusinessObjects.MyFanCommon.eMemberType.Professional" href="@MYFAN.BusinessObjects.MyFanCommon.eMemberType.Professional">
+                            <img src="images/professional-member.png" alt="Professional-member" title="Professional-member">
+                            <h2>Professional</h2>
+                            <h3>Member</h3>
+                            <p>Share your passion to expand your business and create fans</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="@MYFAN.BusinessObjects.MyFanCommon.eMemberType.Business" href="@MYFAN.BusinessObjects.MyFanCommon.eMemberType.Business">
+                            <img src="images/business-member.png" alt="Business-member" title="Business-member">
+                            <h2>Business</h2>
+                            <h3>Member</h3>
+                            <p>Build relationships with professionals to connect with their fans</p>
+                        </a>
+                    </li>
+                </ul>
+            }
+        </div>
+    </div>
+</div>

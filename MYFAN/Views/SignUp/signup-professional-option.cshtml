@@ -1,0 +1,19 @@
+﻿@model SignUpProfessionalType
+@{
+    ViewBag.Title = "signupprofessionaloption";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div id="page-container" class="signup-wrap">
+        @using (Html.BeginForm("signup-professional-option", "signup", FormMethod.Post))
+        {
+            <h1>Create a Professionals page</h1>
+            <ul class="signup-circlebox">
+                <li><a href=""><span class="circle">Artistically<br>Skillled<br>Professionals</span></a></li>
+                <li><a href=""><span class="circle">Trade<br>Skilled<br>Professionals</span></a> </li>
+                <li><a href=""><span class="circle">Celebrities,<br>Sports &<br>Entertainment</span></a></li>
+            </ul>
+        }
+    </div>
+</div>
+
